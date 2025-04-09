@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC Doctors Salary Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BC Doctors Salary Database</h1>
+        
+        <div class="disclaimer">
+            <p>
+                <strong>Important Notes:</strong> Data reflects <strong>gross payments</strong> from BC's Medical Services Plan (MSP) for the fiscal year ending March 31, 2024 (unaudited). 
+                These figures <strong>do not represent net income</strong>, as practitioners pay overhead expenses (staff, rent, supplies, etc.) from this amount.
+                Payments under $25,000 or from sources like WorkSafeBC/ICBC may not be included.
+            </p>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by name (e.g., Jane Doe or Doe, Jane)...">
+            <button id="clearSearchBtn" class="clear-search" title="Clear search">&times;</button>
+            </div>
+
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+        
+        <div id="resultsArea" style="display: none;"> 
+            <div class="stats-container">
+                <div class="result-count" id="resultCount"></div>
+                <div class="statistics" id="statistics"></div>
+            </div>
+
+            <div class="results-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th data-column="name">Name <span class="sort-icon"></span></th>
+                            <th data-column="salary">Total Compensation <span class="sort-icon"></span></th>
+                            <th data-column="rank">Rank <span class="sort-icon"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody"></tbody>
+                </table>
+            </div>
+            
+            <div id="pagination" class="pagination">
+                <button id="prevPage"><i class="fas fa-arrow-left"></i> Previous</button>
+                <span id="pageInfo">Page 1</span>
+                <button id="nextPage">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
