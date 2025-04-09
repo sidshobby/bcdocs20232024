@@ -245,6 +245,14 @@ tr:hover {
     th, td {
         padding: 10px 8px;
     }
+
+    /* Make rank column narrower */
+    th[data-column="rank"],
+    td:nth-child(3) { /* Assuming Rank is the 3rd column */
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center; /* Center rank */
+    }
 }
 
 @media (max-width: 480px) {
@@ -271,6 +279,24 @@ tr:hover {
     }
     #pageInfo {
         margin: 10px 0;
+    }
+
+    /* Further reduce table padding and font size */
+    th, td {
+        padding: 8px 5px; /* Further reduce padding */
+        font-size: 0.85rem; /* Slightly smaller font in table cells */
+    }
+
+    /* Ensure rank column is still reasonably sized */
+    th[data-column="rank"],
+    td:nth-child(3) { 
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    
+    /* Adjust statistics display for very small screens */
+    .statistics span {
+        font-size: 0.8rem; /* Smaller font for stats */
     }
 }
 
